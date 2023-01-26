@@ -13,8 +13,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ user }) => {
   return (
-    <div className="flex flex-col w-full mx-auto">
-      <div className="flex flex-row justify-between mb-[26px] mobile:mb-[14px] gap-4">
+    <div className="mx-auto flex w-full flex-col">
+      <div className="mb-[26px] flex flex-row justify-between gap-4 mobile:mb-[14px]">
         <Image
           src={user.imageUrl}
           alt="icon"
@@ -23,11 +23,11 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
           className="rounded-full"
         />
 
-        <div className="flex flex-col w-full justify-center">
-          <h1 className="font-bold text-base leading-[19px]">{user.name}</h1>
-          <div className="flex flex-row items-center pt-1 gap-1">
-            <span className="w-2 h-2 rounded-full bg-online inline-block animate-pulse" />
-            <p className="text-online text-xs leading-[14px]">Online</p>
+        <div className="flex w-full flex-col justify-center">
+          <h1 className="text-base font-bold leading-[19px]">{user.name}</h1>
+          <div className="flex flex-row items-center gap-1 pt-1">
+            <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-online" />
+            <p className="text-xs leading-[14px] text-online">Online</p>
           </div>
         </div>
 

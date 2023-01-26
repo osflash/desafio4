@@ -95,7 +95,7 @@ const Home = () => {
   }
 
   return (
-    <div className="flex w-full flex-col items-center justify-between mobile:mx-[72px] mobile:my-8 mx-8 my-6">
+    <div className="mx-8 my-6 flex w-full flex-col items-center justify-between mobile:mx-[72px] mobile:my-8">
       <Header user={user} />
 
       <Messages userId={user.id} users={users} />

@@ -22,19 +22,19 @@ export const Send: React.FC<SendProps> = ({ handleAddMessage }) => {
   }
 
   return (
-    <form onSubmit={handleSendClick} className="w-full mt-6">
-      <div className="flex h-[52px] rounded-full py-[14px] px-6 bg-input justify-between gap-[10px]">
+    <form onSubmit={handleSendClick} className="mt-6 w-full">
+      <div className="flex h-[52px] justify-between gap-[10px] rounded-full bg-input py-[14px] px-6">
         <input
           type="text"
           placeholder="Digite sua mensagem"
           value={message}
           onChange={e => setMessage(e.target.value)}
-          className="bg-transparent outline-none text-xs leading-[14px] w-full "
+          className="w-full bg-transparent text-xs leading-[14px] outline-none "
         />
         <button type="submit">
           <PaperPlaneRight
             size={22}
-            className="rounded-full cursor-pointer transition duration-500 ease-out hover:ease-in animate-pulse hover:blur-sm"
+            className="animate-pulse cursor-pointer rounded-full transition duration-500 ease-out hover:blur-sm hover:ease-in"
           />
         </button>
       </div>

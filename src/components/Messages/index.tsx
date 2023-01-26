@@ -24,19 +24,19 @@ export const Messages: React.FC<MessagesProps> = ({ userId, users }) => {
           <div
             key={user.message.uuid}
             ref={element => element?.scrollIntoView()}
-            className={clsx('flex flex-col my-[30px]', {
+            className={clsx('my-[30px] flex flex-col', {
               'items-start ': isUser,
               'items-end': !isUser
             })}
           >
-            <h2 className="text-xs leading-[14px] mb-[10px]">
+            <h2 className="mb-[10px] text-xs leading-[14px]">
               {isUser ? user.name : 'Você '} -{' '}
               {ms(Date.now() - user.message.timestamp, { long: true })}
             </h2>
             <p
-              className={clsx('p-[14px] text-xs leading-[14px ', {
-                'bg-user rounded-r-lg rounded-bl-lg': isUser,
-                'bg-me rounded-l-lg rounded-br-lg': !isUser
+              className={clsx('leading-[14px p-[14px] text-xs ', {
+                'rounded-r-lg rounded-bl-lg bg-user': isUser,
+                'rounded-l-lg rounded-br-lg bg-me': !isUser
               })}
             >
               {user.message.text}
