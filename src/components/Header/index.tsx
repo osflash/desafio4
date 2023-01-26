@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
         <div className="flex flex-col w-full justify-center">
           <h1 className="font-bold text-base leading-[19px]">{user.name}</h1>
           <div className="flex flex-row items-center pt-1 gap-1">
-            <span className="w-2 h-2 rounded-full bg-online inline-block animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-online inline-block animate-ping" />
             <p className="text-online text-xs leading-[14px]">Online</p>
           </div>
         </div>
