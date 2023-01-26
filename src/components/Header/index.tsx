@@ -31,7 +31,11 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
           </div>
         </div>
 
-        <X size={32} className="flex h-full" />
+        <X
+          size={32}
+          className="flex h-full cursor-pointer"
+          onClick={() => window.location.reload()}
+        />
       </div>
 
       <p className="text-center text-xs leading-[14px]">

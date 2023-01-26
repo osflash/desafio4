@@ -8,6 +8,6 @@
   }
 
   body {
-    @apply flex w-screen h-screen;
+    @apply flex h-screen  mx-auto max-w-[1024px];
   }
 }
