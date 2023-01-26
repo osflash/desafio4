@@ -5,7 +5,7 @@ import Image from 'next/image'
 import ms from 'ms'
 import { X } from 'phosphor-react'
 
-import { User } from '~/utils'
+import { User } from '~/@types/user'
 
 interface HeaderProps {
   user: User
