@@ -11,9 +11,13 @@ interface MessagesProps {
 }
 
 export const Messages: React.FC<MessagesProps> = ({ userId, users }) => {
+  const messages = users.sort(
+    (a, b) => a.message.timestamp - b.message.timestamp
+  )
+
   return (
     <div className="w-full overflow-y-auto ">
-      {users.map(user => {
+      {messages.map(user => {
         const isUser = user.id === userId
 
         return (
