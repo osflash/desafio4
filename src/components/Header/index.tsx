@@ -2,10 +2,10 @@
 
 import Image from 'next/image'
 
-import ms from 'ms'
 import { X } from 'phosphor-react'
 
 import { User } from '~/@types/user'
+import { getRelativeTimeString } from '~/utils'
 
 interface HeaderProps {
   user: User
@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
       </div>
 
       <p className="text-center text-xs leading-[14px]">
-        {ms(Date.now() - user.message.timestamp, { long: true })}
+        {getRelativeTimeString(user.message.timestamp)}
       </p>
     </div>
   )

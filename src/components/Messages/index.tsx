@@ -1,14 +1,18 @@
 'use client'
 
 import clsx from 'clsx'
-import ms from 'ms'
 
 import { User } from '~/@types/user'
+import { getRelativeTimeString } from '~/utils'
 
 interface MessagesProps {
   userId: string
   users: User[]
 }
+
+const dtf = new Intl.DateTimeFormat('pt-BR', {
+  timeStyle: 'full'
+})
 
 export const Messages: React.FC<MessagesProps> = ({ userId, users }) => {
   const messages = users.sort(
@@ -30,8 +34,9 @@ export const Messages: React.FC<MessagesProps> = ({ userId, users }) => {
             })}
           >
             <h2 className="mb-[10px] text-xs leading-[14px]">
-              {isUser ? user.name : 'Você '} -{' '}
-              {ms(Date.now() - user.message.timestamp, { long: true })}
+              {`${isUser ? user.name : 'Você'} - ${getRelativeTimeString(
+                user.message.timestamp
+              )}`}
             </h2>
             <p
               className={clsx('leading-[14px p-[14px] text-xs ', {
